@@ -173,7 +173,7 @@ const menuCategories = [
       { 
         id: "wrap-delight", 
         name: "Wrap de panceta DeLight", 
-        description: "", 
+        description: "Panceta dorada, vegetales frescos y salsa ligera en tortilla suave. Sabor intenso en versión más liviana.", 
         price: 2.99,
         image: "wrap panceta.jpeg", 
       },
