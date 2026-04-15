@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1B3A5C" />
+  <title>DeLight - Yogurt Griego | Saludable y Natural</title>
+  <meta name="description" content="DeLight es un restaurante especializado en comida saludable y natural, con opciones frescas y nutritivas. Yogurt griego, ensaladas, wraps y mucho mas en Manta, Ecuador." />
+  <meta name="keywords" content="yogurt griego, comida saludable, DeLight, Manta, Ecuador, restaurante natural" />
+  <link rel="icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#inicio" class="nav-logo">
+        <span class="nav-logo-sub">Yogurt Griego</span>
+        <span class="nav-logo-main">DeLight</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#especialidades" class="nav-link">Especialidades</a>
+        <a href="#ubicacion" class="nav-link">Ubicacion</a>
+        <button class="nav-cart-btn" onclick="openCart()">
+          <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+          Pedido
+          <span class="cart-badge hidden" id="desktopBadge">0</span>
+        </button>
+      </div>
+
+      <div class="nav-mobile-right">
+        <button class="mobile-cart-btn" onclick="openCart()">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+          <span class="mobile-cart-badge hidden" id="mobileBadge">0</span>
+        </button>
+        <button class="mobile-nav-toggle" onclick="toggleMobileMenu()" aria-label="Abrir menu">
+          <svg class="icon-lg" id="menuIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="icon-lg hidden" id="closeIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a href="#inicio" onclick="closeMobileMenu()">Inicio</a>
+        <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+        <a href="#especialidades" onclick="closeMobileMenu()">Especialidades</a>
+        <a href="#ubicacion" onclick="closeMobileMenu()">Ubicacion</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="f" alt="">
+    </div>
+    <div class="hero-content">
+      <img class="hero-logo" id="heroLogo" src="icon.png" alt="DeLight Yogurt Griego - Logo" />
+      
+      <p class="hero-subtitle" id="heroSubtitle">Yogurt Griego</p>
+      <h1 class="hero-title font-serif" id="heroTitle">DeLight</h1>
+      <p class="hero-tagline" id="heroTagline">Saludable y Natural</p>
+      <div class="hero-divider" id="heroDivider"></div>
+      <p class="hero-desc" id="heroDesc">Especializado en comida saludable y natural, con opciones frescas y nutritivas. Platos balanceados, ensaladas, snacks integrales y yogur griego natural. Sabor con bienestar en cada bocado.</p>
+      <div class="hero-buttons" id="heroButtons">
+        <a href="#menu" class="btn-primary-hero">Ver Menu</a>
+        <a href="#especialidades" class="btn-outline-hero">Especialidades</a>
+      </div>
+    </div>
+    <a href="#menu" class="hero-scroll" id="heroScroll" aria-label="Scroll al menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="label">
+          <svg class="leaf-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 019.8 6.9C15.5 4.9 17 3.5 17 3.5s4 2 4 8.5c0 4.5-5 8-10 8z"/><path d="M11 20V10"/></svg>
+          <span>Nuestro Menu</span>
+          <svg class="leaf-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 019.8 6.9C15.5 4.9 17 3.5 17 3.5s4 2 4 8.5c0 4.5-5 8-10 8z"/><path d="M11 20V10"/></svg>
+        </div>
+        <h2 class="font-serif">Sabor y Bienestar</h2>
+        <p>Cada plato esta pensado para combinar lo mejor de la naturaleza con sabores que te encantaran</p>
+      </div>
+
+      <div class="category-filters" data-animate id="categoryFilters"></div>
+      <div id="menuContainer"></div>
+    </div>
+  </section>
+
+ 
+  <section class="specialties" id="especialidades">
+    <div class="deco-bg">
+      <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none"><circle cx="200" cy="300" r="200" stroke="#3DC8C8" stroke-width="1"/><circle cx="600" cy="200" r="150" stroke="#F27089" stroke-width="1"/><circle cx="700" cy="500" r="100" stroke="#3DC8C8" stroke-width="1"/></svg>
+    </div>
+    <div class="container" data-animate>
+      <div class="section-header">
+        <span style="display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3em;color:var(--delight-pink);margin-bottom:0.75rem;">Lo mas pedido</span>
+        <h2 class="font-serif" style="color:var(--delight-cream);">Nuestras Especialidades</h2>
+        <p style="color:rgba(255,248,242,0.6);">Los favoritos de nuestros clientes, preparados con los ingredientes mas frescos</p>
+      </div>
+      <div class="specialties-grid" id="specialtiesGrid"></div>
+    </div>
+  </section>
+
+ 
+  <section class="menu-banner">
+    <div class="container" data-animate>
+      <div class="section-header">
+        <span style="display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3em;color:rgba(27,58,92,0.6);margin-bottom:0.5rem;">Menu Completo</span>
+        <h2 class="font-serif" style="font-size:2rem;color:var(--delight-navy);">Conoce Todas Nuestras Opciones</h2>
+      </div>
+      <div class="banner-images-grid">
+        <div class="banner-img-wrap">
+          <div class="banner-img-inner">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-17%20at%2011.18.59%20AM%20%282%29-V1qdJQYXFy8YKL2g55ozLg1LHFZRDp.jpeg" alt="Menu completo DeLight - Tostas, Wraps, Ensaladas, Combos y Bebidas" />
+          </div>
+        </div>
+        <div class="banner-img-wrap">
+          <div class="banner-img-inner">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="location" id="ubicacion">
+    <div class="container" data-animate>
+      <div class="section-header">
+        <span style="display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3em;color:var(--delight-pink);margin-bottom:0.75rem;">Visitanos</span>
+        <h2 class="font-serif" style="color:var(--delight-navy);">Nuestra Ubicacion</h2>
+      </div>
+      <div class="location-grid">
+        <div class="map-wrap">
+          
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64493.007119165726!2d-80.73379839999998!3d-0.9601024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902be5001165786b%3A0x7fbcf36f045efec3!2sDeLight!5e1!3m2!1ses-419!2sec!4v1774106326413!5m2!1ses-419!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon pink"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <h3>Direccion</h3>
+            </div>
+            <p>Via Circunvalacion, redondel de Los Electricos,<br/>Manta, Ecuador</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon cyan"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <h3>Horario</h3>
+            </div>
+            <p>Lunes a Viernes: 8:00 AM - 9:00 PM</p>
+            <p>Sabados: 9:00 AM - 6:00 PM</p>
+            <p>Domingos: 9:00 AM - 6:00 PM</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon navy"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <h3>Contacto</h3>
+            </div>
+           
+            <a href="https://wa.me/+593958703353" target="_blank" rel="noopener noreferrer" class="wa">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="https://instagram.com/delight_ecuador" target="_blank" rel="noopener noreferrer" class="ig" style="margin-top:0.5rem;">
+              <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @Delight_Ecuador
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <span class="footer-logo-sub">Yogurt Griego</span>
+          <span class="footer-logo-main font-serif">DeLight</span>
+          <span class="footer-logo-tag">Saludable y Natural</span>
+        </div>
+        <div class="footer-arcs">
+          <svg height="16" width="80" viewBox="0 0 80 16" fill="none"><path d="M2 14 Q40 -6 78 14" stroke="currentColor" stroke-width="2"/></svg>
+          <div class="footer-dot"></div>
+          <svg height="16" width="80" viewBox="0 0 80 16" fill="none"><path d="M2 14 Q40 -6 78 14" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/delight_ecuador" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/+593958703353" target="_blank" rel="noopener noreferrer" class="wa-link" aria-label="WhatsApp">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+        <p class="footer-address">Via Circunvalacion, redondel de Los Electricos, Manta, Ecuador</p>
+        <div class="footer-copy">
+          <span>2026 DeLight. <a href="https://tulink.com" target="_blank" style="text-decoration:none; color:inherit;">CODE🌐GUREX</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <div class="toast-inner">
+      <div class="toast-check">
+        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <span id="toastMessage"></span>
+    </div>
+  </div>
+
+
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div class="cart-header-left">
+        <svg style="width:1.25rem;height:1.25rem;color:var(--delight-pink);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+        <h2>Tu Pedido</h2>
+        <span class="cart-count-badge hidden" id="cartCountBadge">0 items</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Cerrar carrito">
+        <svg style="width:1.25rem;height:1.25rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-content" id="cartContent"></div>
+    <div class="cart-footer hidden" id="cartFooter">
+      <div id="cartTotalSection" class="cart-total-section"></div>
+      <button class="whatsapp-btn" id="whatsappBtn" onclick="sendToWhatsApp()" disabled>
+        <svg style="width:1.25rem;height:1.25rem;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Enviar Pedido por WhatsApp
+      </button>
+      <p class="whatsapp-hint" id="whatsappHint">Ingresa tu nombre para enviar el pedido</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
