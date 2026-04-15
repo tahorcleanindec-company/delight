@@ -173,6 +173,21 @@ const menuCategories = [
     ]
   },
   {
+    id: "wraps", 
+    name: "Wraps de panceta", 
+    emoji: "\u{1F32F}",  
+    description: "",
+    items: [
+      { 
+        id: "wrap-delight", 
+        name: "Wrap de panceta DeLight", 
+        description: "", 
+        price: 2.99,
+        image: "wraps panceta.jpeg", 
+      },
+    ]
+  },
+  {
     id: "ensaladas", 
     name: "Ensaladas DeLight", 
     emoji: "\u{1F957}",  
