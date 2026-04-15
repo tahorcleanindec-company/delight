@@ -174,7 +174,7 @@ const menuCategories = [
   },
   {
     id: "wraps", 
-    name: "Wraps de panceta", 
+    name: "Wraps DeLight", 
     emoji: "\u{1F32F}",  
     description: "",
     items: [
@@ -183,7 +183,7 @@ const menuCategories = [
         name: "Wrap de panceta DeLight", 
         description: "", 
         price: 2.99,
-        image: "wraps panceta.jpeg", 
+        image: "wrap panceta.jpeg", 
       },
     ]
   },
