@@ -170,14 +170,6 @@ const menuCategories = [
         price: 2.50,
         image: "wraps.png", 
       },
-    ]
-  },
-  {
-    id: "wraps", 
-    name: "Wraps DeLight", 
-    emoji: "\u{1F32F}",  
-    description: "",
-    items: [
       { 
         id: "wrap-delight", 
         name: "Wrap de panceta DeLight", 
@@ -187,6 +179,7 @@ const menuCategories = [
       },
     ]
   },
+  
   {
     id: "ensaladas", 
     name: "Ensaladas DeLight", 
