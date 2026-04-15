@@ -173,9 +173,9 @@ const menuCategories = [
       { 
         id: "wrap-delight", 
         name: "Wrap de panceta DeLight", 
-        description: "Panceta dorada, vegetales frescos y salsa ligera en tortilla suave. Sabor intenso en versión más liviana.", 
+        description: "Equilibrio perfecto entre lo crujiente, lo ahumado y lo fresco. Panceta crunchy cama de lechuga rizada rodajas de tomate cherrycol morada frescaBañada con nuestra salsa especial de Skyr Irlandés y queso parmesanoenvueltas en una tortilla de trigo sellada a la plancha", 
         price: 2.99,
-        image: "wrap panceta.jpeg", 
+        image: "wrap panceta.jpg", 
       },
     ]
   },
