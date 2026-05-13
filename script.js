@@ -153,7 +153,7 @@ const menuCategories = [
         name: "Tostada Pomodoro DeLight", 
         description: "Pan integral con Skyr, tomates cherry al pomodoro, albahaca fresca y balsamico", 
         price: 2.00,
-        image: "tostadapomodoro.jpg", 
+        image: "pomodor.jpeg", 
       },
     ]
   },
