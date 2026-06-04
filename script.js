@@ -808,7 +808,7 @@ function renderCart() {
   html += '<button class="delivery-btn ' + (deliveryType === "pickup" ? "active" : "") + '" onclick="setDelivery(\'pickup\')">';
   html += '<svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg> Retiro</button>';
   html += '<button class="delivery-btn ' + (deliveryType === "delivery" ? "active" : "") + '" onclick="setDelivery(\'delivery\')">';
-  html += '<svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Domicilio (+$0.25)</button>';
+  html += '<svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Empaque por envío</button>';
   html += '</div></div>';
 
   html += '<div class="form-group"><label class="form-label" for="customerName">Tu nombre</label>';
