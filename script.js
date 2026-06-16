@@ -163,20 +163,20 @@ const menuCategories = [
     emoji: "\u{1F32F}",  
     description: "Wraps frescos y proteicos",
     items: [
-      { 
-        id: "wrap-delight", 
-        name: "Wrap Proteico DeLight", 
-        description: "Pollo grillado con lechugas, pepino, tomate cherry y cebolla morada encurtida. Servido con dip de Skyr al limon y eneldo", 
-        price: 2.50,
-        image: "wraps.png", 
-      },
-      { 
-        id: "wrap-delight", 
-        name: "Wrap de panceta DeLight", 
-        description: "Equilibrio perfecto entre lo crujiente, lo ahumado y lo fresco. Panceta crunchy cama de lechuga rizada rodajas de tomate cherrycol morada fresca bañada con nuestra salsa especial de Skyr Irlandés y queso parmesano envueltas en una tortilla de trigo sellada a la plancha", 
-        price: 2.99,
-        image: "wrap panceta.jpg", 
-      },
+      {
+  id: "wrap-proteico",
+  name: "Wrap Proteico DeLight",
+  description: "...",
+  price: 2.50,
+  image: "wraps.png"
+},
+{
+  id: "wrap-panceta",
+  name: "Wrap de panceta DeLight",
+  description: "...",
+  price: 2.99,
+  image: "wrap panceta.jpg"
+},
     ]
   },
   
