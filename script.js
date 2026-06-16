@@ -864,7 +864,7 @@ function sendToWhatsApp() {
   
   let msg = "*Nuevo Pedido DeLight*\n\n";
   msg += "*Cliente:* " + (customerName || "No especificado") + "\n";
-  msg += "*Tipo:* " + (deliveryType === "pickup" ? "Retiro en local" : "Envio a domicilio") + "\n";
+  msg += "*Tipo:* " + (deliveryType === "pickup" ? "Retiro en local" : "Empaque por envio ") + "\n";
   
   if (deliveryType === "pickup" && pickupTime) {
     msg += "*Hora de retiro:* " + pickupTime + "\n";
