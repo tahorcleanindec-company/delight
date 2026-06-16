@@ -1,4 +1,3 @@
-
 const menuCategories = [
   {
     id: "yogurt", 
@@ -163,20 +162,20 @@ const menuCategories = [
     emoji: "\u{1F32F}",  
     description: "Wraps frescos y proteicos",
     items: [
-      {
-  id: "wrap-proteico",
-  name: "Wrap Proteico DeLight",
-  description: "...",
-  price: 2.50,
-  image: "wraps.png"
-},
-{
-  id: "wrap-panceta",
-  name: "Wrap de panceta DeLight",
-  description: "...",
-  price: 2.99,
-  image: "wrap panceta.jpg"
-},
+      { 
+        id: "wrap-delight", 
+        name: "Wrap Proteico DeLight", 
+        description: "Pollo grillado con lechugas, pepino, tomate cherry y cebolla morada encurtida. Servido con dip de Skyr al limon y eneldo", 
+        price: 2.50,
+        image: "wraps.png", 
+      },
+      { 
+        id: "wrap-delight", 
+        name: "Wrap de panceta DeLight", 
+        description: "Equilibrio perfecto entre lo crujiente, lo ahumado y lo fresco. Panceta crunchy cama de lechuga rizada rodajas de tomate cherrycol morada fresca bañada con nuestra salsa especial de Skyr Irlandés y queso parmesano envueltas en una tortilla de trigo sellada a la plancha", 
+        price: 2.99,
+        image: "wrap panceta.jpg", 
+      },
     ]
   },
   
@@ -317,17 +316,14 @@ const specialtiesData = [
 
 
 
-const WHATSAPP_NUMBER = "+593958703353"; 
+const WHATSAPP_NUMBER = "+593988881368"; 
 
-const DELIVERY_FEE = 0.25;  
+const PACKAGING_FEE = 0.25;  
 
 
 let cartItems = [];
 let activeFilter = "all";
-let deliveryType = "pickup";
 let customerName = "";
-let pickupTime = "";
-let address = "";
 let notes = "";
 
 
@@ -716,14 +712,7 @@ function getSubtotal() {
 }
 
 function getTotal() {
-  var sub = getSubtotal();
-
-  if (deliveryType === "delivery") {
-    var totalItems = getTotalItems(); // cantidad total de productos
-    return sub + (DELIVERY_FEE * totalItems);
-  }
-
-  return sub;
+  return getSubtotal() + (PACKAGING_FEE * getTotalItems());
 }
 
 
@@ -756,13 +745,9 @@ function renderCart() {
 
   var sub = getSubtotal();
   var tot = getTotal();
+  var packagingCost = PACKAGING_FEE * getTotalItems();
   var totalHtml = '<div class="cart-subtotal"><span>Subtotal</span><span>$' + sub.toFixed(2) + '</span></div>';
-  if (deliveryType === "delivery") {
-  var deliveryCost = DELIVERY_FEE * getTotalItems();
-
-  totalHtml += '<div class="cart-delivery-fee"><span>Envio a domicilio</span><span class="fee">+$' + deliveryCost.toFixed(2) + '</span></div>';
-}
-
+  totalHtml += '<div class="cart-delivery-fee"><span>Empaque por el envio</span><span class="fee">+$' + packagingCost.toFixed(2) + '</span></div>';
   totalHtml += '<div class="cart-total-row"><span>Total</span><span class="total-amount">$' + tot.toFixed(2) + '</span></div>';
   document.getElementById("cartTotalSection").innerHTML = totalHtml;
 
@@ -803,24 +788,8 @@ function renderCart() {
   html += '</div>';
   html += '<button class="clear-cart-btn" onclick="clearCart()">Vaciar carrito</button>';
 
-  html += '<div class="form-group"><label class="form-label">Tipo de entrega</label>';
-  html += '<div class="delivery-grid">';
-  html += '<button class="delivery-btn ' + (deliveryType === "pickup" ? "active" : "") + '" onclick="setDelivery(\'pickup\')">';
-  html += '<svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg> Retiro</button>';
-  html += '<button class="delivery-btn ' + (deliveryType === "delivery" ? "active" : "") + '" onclick="setDelivery(\'delivery\')">';
-  html += '<svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Empaque por envío</button>';
-  html += '</div></div>';
-
   html += '<div class="form-group"><label class="form-label" for="customerName">Tu nombre</label>';
   html += '<input class="form-input" id="customerName" type="text" placeholder="Nombre completo" value="' + escapeHtml(customerName) + '" oninput="onNameChange(this.value)" /></div>';
-
-  if (deliveryType === "pickup") {
-    html += '<div class="form-group"><label class="form-label form-label-flex" for="pickupTimeInput"><svg style="width:0.75rem;height:0.75rem;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Hora de retiro</label>';
-    html += '<input class="form-input" id="pickupTimeInput" type="time" value="' + pickupTime + '" oninput="pickupTime=this.value" /></div>';
-  } else {
-    html += '<div class="form-group"><label class="form-label" for="addressInput">Direccion de entrega</label>';
-    html += '<textarea class="form-textarea" id="addressInput" placeholder="Calle, numero, referencia..." rows="2" oninput="address=this.value">' + escapeHtml(address) + '</textarea></div>';
-  }
 
   html += '<div class="form-group"><label class="form-label" for="notesInput">Notas adicionales</label>';
   html += '<textarea class="form-textarea" id="notesInput" placeholder="Alergias, preferencias especiales..." rows="2" oninput="notes=this.value">' + escapeHtml(notes) + '</textarea></div>';
@@ -852,11 +821,6 @@ function updateWhatsAppBtn() {
   }
 }
 
-function setDelivery(type) {
-  deliveryType = type;
-  renderCart();
-}
-
 
 
 function sendToWhatsApp() {
@@ -864,14 +828,6 @@ function sendToWhatsApp() {
   
   let msg = "*Nuevo Pedido DeLight*\n\n";
   msg += "*Cliente:* " + (customerName || "No especificado") + "\n";
-  msg += "*Tipo:* " + (deliveryType === "pickup" ? "Retiro en local" : "Empaque por envio ") + "\n";
-  
-  if (deliveryType === "pickup" && pickupTime) {
-    msg += "*Hora de retiro:* " + pickupTime + "\n";
-  }
-  if (deliveryType === "delivery" && address) {
-    msg += "*Direccion:* " + address + "\n";
-  }
   
   msg += "\n*--- Detalle del pedido ---*\n\n";
   
@@ -893,9 +849,8 @@ function sendToWhatsApp() {
   });
   
   msg += "\n*Subtotal: $" + getSubtotal().toFixed(2) + "*\n";
-  var deliveryCost = DELIVERY_FEE * getTotalItems();
-msg += "*Envio a domicilio: +$" + deliveryCost.toFixed(2) + "*\n";
-
+  var packagingCost = PACKAGING_FEE * getTotalItems();
+  msg += "*Empaque por el envio: +$" + packagingCost.toFixed(2) + "*\n";
   msg += "*TOTAL: $" + getTotal().toFixed(2) + "*\n";
   
   if (notes) {
